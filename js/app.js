@@ -4,13 +4,15 @@ class Enemy {
         // we've provided one for you to get started
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
+
+
         //var arrX = [-100, -200, -300, -400, -500, -600, -700, -800];
         //var arrY = [60, 140, 230];
         this.sprite = 'images/enemy-bug.png';
         this.dt = 0;
         this.y = y;
         this.x = x;
-        this.speed = 100;
+        this.speed = getRandomArbitrary(100,150);
     }
 
     // Update the enemy's position, required method for game
@@ -39,23 +41,47 @@ class Enemy {
     return rand;
 }; */
 
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 class Player {
-    constructor(playerImage) {
+    constructor(playerImage,x,y) {
         this.playerImage = playerImage;
+        this.dt = 0;
+        this.y = y;
+        this.x = x;
     }
-    update() {
+    update(dt) {
 
     }
     render() {
-
+        ctx.drawImage(Resources.get(this.playerImage), this.x, this.y);
     }
-    handleInput() {
-
+    handleInput(pressedKey) {
+        switch (pressedKey) {
+            case 'up':
+                this.y -= 100;
+                break;
+            case 'down':
+                this.y += 100;
+                break;
+            case 'right':
+                this.x += 100;
+                break;
+            default:
+                this.x -= 100;
+                break;
+        }
+    }
+    checkCollisions(pos){
+        pos = this.x;
     }
 }
+let player = new Player('images/char-boy.png',200,300);
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -68,7 +94,6 @@ let enemy4 = new Enemy(-390, 140);
 let enemy5 = new Enemy(-490, 60);
 let enemy6 = new Enemy(-890, 230);
 let allEnemies = [enemy1,enemy2,enemy3,enemy4,enemy5,enemy6]; 
-let player = new Player('images/char-boy.png');
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
