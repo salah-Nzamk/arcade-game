@@ -8,8 +8,8 @@ class Enemy {
         //var arrY = [60, 140, 230];
         this.sprite = 'images/enemy-bug.png';
         this.dt = 0;
-        this.y = x;
-        this.x = y;
+        this.y = y;
+        this.x = x;
         this.speed = 100;
     }
 
