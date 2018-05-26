@@ -67,19 +67,23 @@ class Player {
         ctx.drawImage(Resources.get(this.playerImage), this.x, this.y);
     }
     handleInput(pressedKey) {
-        switch (pressedKey) {
-            case 'up':
-                this.y -= 80;
-                break;
-            case 'down':
-                this.y += 80;
-                break;
-            case 'right':
-                this.x += 100;
-                break;
-            default:
-                this.x -= 100;
-                break;
+        console.log(this.x);
+        console.log(this.y);
+        if ((this.x >=100)) {
+            switch (pressedKey) {
+                case 'up':
+                    this.y -= 80;
+                    break;
+                case 'down':
+                    this.y += 80;
+                    break;
+                case 'right':
+                    this.x += 100;
+                    break;
+                default:
+                    this.x -= 100;
+                    break;
+            }   
         }
     }
 

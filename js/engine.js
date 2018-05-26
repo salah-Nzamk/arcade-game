@@ -90,7 +90,8 @@ var Engine = (function(global) {
                 player.x + player.width > enemy.x &&
                 player.y < enemy.y + enemy.height &&
                 player.height + player.y > enemy.y) {
-                 console.log("collision detected!");
+                 player.x = 200;
+                 player.y = 300;
              }else{
              //console.log("No collision");
              }
