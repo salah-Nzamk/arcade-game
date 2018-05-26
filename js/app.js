@@ -13,6 +13,8 @@ class Enemy {
         this.y = y;
         this.x = x;
         this.speed = getRandomArbitrary(100,150);
+        this.width = 101;
+        this.height = 171;
     }
 
     // Update the enemy's position, required method for game
@@ -54,6 +56,9 @@ class Player {
         this.dt = 0;
         this.y = y;
         this.x = x;
+        this.width = 101;
+        this.height = 171;
+
     }
     update(dt) {
 

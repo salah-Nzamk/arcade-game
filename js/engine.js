@@ -79,11 +79,20 @@ var Engine = (function(global) {
      */
     function checkCollisions(player,allEnemies) {
         allEnemies.forEach(function(enemy) {
+            //console.log(enemy.width);
+            //console.log(enemy.height);
+/*             console.log(player.x < enemy.x + enemy.width &&
+                player.x + player.width > enemy.x &&
+                player.y < enemy.y + enemy.height &&
+                player.height + player.y > enemy.y); */
+
             if (player.x < enemy.x + enemy.width &&
                 player.x + player.width > enemy.x &&
                 player.y < enemy.y + enemy.height &&
                 player.height + player.y > enemy.y) {
                  console.log("collision detected!");
+             }else{
+             //console.log("No collision");
              }
         });
     }
