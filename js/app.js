@@ -12,7 +12,7 @@ class Enemy {
         this.dt = 0;
         this.y = y;
         this.x = x;
-        this.speed = getRandomArbitrary(100,150);
+        this.speed = getRandomArbitrary(100,250);
         this.width = 50;
         this.height = 50;
     }
@@ -60,16 +60,45 @@ class Player {
         this.height = 50;
 
     }
+    checkCollisions() {
+        var myplayer = this;
+        allEnemies.forEach(function(enemy) {
+            if (myplayer.x < enemy.x + enemy.width &&
+                myplayer.x + myplayer.width > enemy.x &&
+                myplayer.y < enemy.y + enemy.height &&
+                myplayer.height + myplayer.y > enemy.y) {
+                    myplayer.reset();
+             }
+        });
+    }
+    checkBroder(){
+        if (this.x <0  || this.x >= 450  || this.y >=450 || this.y <-20)
+        {
+            this.reset();
+        }
+    }
+    checkWin(){
+        console.log(this.y)
+        if (this.y == -20)
+        {
+            //this.reset();
+            alert("You Win!!!");
+            this.y -= 80;
+        } 
+    }
     update(dt) {
-
+        this.checkWin();
+        this.checkBroder();
+        this.checkCollisions();
     }
     render() {
         ctx.drawImage(Resources.get(this.playerImage), this.x, this.y);
     }
+    reset(){
+        this.x = 200;
+        this.y = 300;
+    }
     handleInput(pressedKey) {
-        console.log(this.x);
-        console.log(this.y);
-        if ((this.x >=100)) {
             switch (pressedKey) {
                 case 'up':
                     this.y -= 80;
@@ -84,7 +113,6 @@ class Player {
                     this.x -= 100;
                     break;
             }   
-        }
     }
 
 }
