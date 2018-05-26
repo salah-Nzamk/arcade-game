@@ -13,8 +13,8 @@ class Enemy {
         this.y = y;
         this.x = x;
         this.speed = getRandomArbitrary(100,150);
-        this.width = 101;
-        this.height = 171;
+        this.width = 50;
+        this.height = 50;
     }
 
     // Update the enemy's position, required method for game
@@ -56,8 +56,8 @@ class Player {
         this.dt = 0;
         this.y = y;
         this.x = x;
-        this.width = 101;
-        this.height = 171;
+        this.width = 50;
+        this.height = 50;
 
     }
     update(dt) {
@@ -69,10 +69,10 @@ class Player {
     handleInput(pressedKey) {
         switch (pressedKey) {
             case 'up':
-                this.y -= 100;
+                this.y -= 80;
                 break;
             case 'down':
-                this.y += 100;
+                this.y += 80;
                 break;
             case 'right':
                 this.x += 100;
