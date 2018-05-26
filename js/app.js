@@ -70,7 +70,6 @@ class Player {
         }
     }
     checkWin(){
-        console.log(this.y)
         if (this.y == -100)
         {
             alert("You Win!!!");
