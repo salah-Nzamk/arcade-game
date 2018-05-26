@@ -5,9 +5,6 @@ class Enemy {
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
 
-
-        //var arrX = [-100, -200, -300, -400, -500, -600, -700, -800];
-        //var arrY = [60, 140, 230];
         this.sprite = 'images/enemy-bug.png';
         this.dt = 0;
         this.y = y;
@@ -38,11 +35,6 @@ class Enemy {
 }
 
 
-/* var getRandomPosition = function (myArray) {
-    var rand = myArray[Math.floor(Math.random() * myArray.length)];
-    return rand;
-}; */
-
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
   }
@@ -72,18 +64,17 @@ class Player {
         });
     }
     checkBroder(){
-        if (this.x <0  || this.x >= 450  || this.y >=450 || this.y <-20)
+        if (this.x <0  || this.x >= 450  || this.y >=450)
         {
             this.reset();
         }
     }
     checkWin(){
         console.log(this.y)
-        if (this.y == -20)
+        if (this.y == -100)
         {
-            //this.reset();
             alert("You Win!!!");
-            this.y -= 80;
+            this.reset();
         } 
     }
     update(dt) {
