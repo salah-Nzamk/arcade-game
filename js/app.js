@@ -82,9 +82,7 @@ class Player {
                 break;
         }
     }
-    checkCollisions(pos){
-        pos = this.x;
-    }
+
 }
 let player = new Player('images/char-boy.png',200,300);
 
