@@ -2,11 +2,11 @@
  This game is developed by myself while taking udacity frontend nanodegree program 
 
 ## Getting Started 
-```
+
 * clone the repo to your local machine or go to [this link](https://salah-nzamk.github.io/arcade-game/)
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * if the game is now on your computer localy start the game from index.html file 
-```
+
 ## Playing the Game 
 
 ``` 
